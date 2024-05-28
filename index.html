@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Horarios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Horarios</h1>
+
+        <section>
+            <h2>Crear Usuario</h2>
+            <form id="formCrearUsuario">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <select name="tipo" required>
+                    <option value="">Tipo</option>
+                    <option value="profesor">Profesor</option>
+                    <option value="estudiante">Estudiante</option>
+                    <option value="administrador">Administrador</option>
+                </select>
+                <button type="submit">Crear Usuario</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Crear Actividad</h2>
+            <form id="formCrearActividad">
+                <input type="text" name="nombre" placeholder="Nombre de la actividad" required>
+                <textarea name="descripcion" placeholder="Descripción"></textarea>
+                <input type="date" name="fecha" required>
+                <input type="time" name="hora" required>
+                <input type="text" name="salon" placeholder="Salón" required>
+                <button type="submit">Crear Actividad</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Asignar Actividad a Usuario</h2>
+            <form id="formAsignarActividad">
+                <select name="usuario_id" id="selectUsuario" required>
+                    <option value="">Seleccione Usuario</option>
+                </select>
+                <select name="actividad_id" id="selectActividad" required>
+                    <option value="">Seleccione Actividad</option>
+                </select>
+                <button type="submit">Asignar Actividad</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Crear Recordatorio</h2>
+            <form id="formCrearRecordatorio">
+                <input type="number" name="actividad_id" placeholder="ID de la Actividad" required>
+                <input type="date" name="fecha_recordatorio" required>
+                <input type="time" name="hora_recordatorio" required>
+                <button type="submit">Crear Recordatorio</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Horarios</h2>
+            <div id="horarios"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
